@@ -1,0 +1,48 @@
+version: '3'
+
+services:
+  nginx:
+    depends_on:
+      - php
+    image: nginx
+    volumes:
+      - D:\php_env\php:/data/php_env/php
+      - D:\php_env\nginx_conf:/etc/nginx/conf.d
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    container_name: nginx
+
+  php:
+    build: .
+    image: wilf/php:1.0
+    depends_on:
+      - mysql
+      - redis
+    restart: always
+    volumes:
+      - D:\php_env\php:/data/php_env/php
+    ports:
+      - 9000:9000
+    container_name: php
+
+  mysql:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+    ports:
+      - 3306:3306
+    container_name: mysql
+
+  redis:
+    image: redis
+    restart: always
+    volumes: 
+      - D:\php_env\redis_conf\redis.conf:/usr/local/etc/redis/redis.conf
+    command: 
+      redis-server /usr/local/etc/redis/redis.conf
+    ports:
+      - 6379:6379
+    container_name: redis
