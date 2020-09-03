@@ -10,8 +10,8 @@ RUN docker-php-ext-install pdo_mysql \
     && mkdir -p /usr/src/php/ext \
     && mv ./redis-5.3.1 /usr/src/php/ext/redis \
     && docker-php-ext-install redis \
-    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-    && docker-php-ext-install -j$(nproc) gd \
+#    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+#    && docker-php-ext-install -j$(nproc) gd \
     #删除包缓存中的所有包
     && apt-get clean \
     && apt-get autoclean \

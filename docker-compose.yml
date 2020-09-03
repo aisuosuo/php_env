@@ -6,7 +6,7 @@ services:
       - php
     image: nginx
     volumes:
-      - D:\php_env\php:/data/php_env/php
+      - D:\php_env\project:/data/php_env/project
       - D:\php_env\nginx_conf:/etc/nginx/conf.d
     restart: always
     ports:
@@ -22,7 +22,7 @@ services:
       - redis
     restart: always
     volumes:
-      - D:\php_env\php:/data/php_env/php
+      - D:\php_env\project:/data/php_env/project
     ports:
       - 9000:9000
     container_name: php
