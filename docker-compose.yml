@@ -1,6 +1,23 @@
 version: '3'
 
 services:
+  swoft:
+    image: swoft/swoft
+    container_name: swoft
+    environment:
+      - APP_ENV=dev
+      - TIMEZONE=Asia/Shanghai
+    restart: always
+    depends_on:
+      - mysql
+      - redis
+    ports:
+      - "18306:18306"
+      - "18307:18307"
+      - "18308:18308"
+    volumes:
+      - D:\php_env\project\swoft:/data/php_env/project/swoft
+
   nginx:
     depends_on:
       - php
