@@ -32,8 +32,8 @@ services:
     container_name: nginx
 
   php:
-    build: .
-    image: wilf/php:1.0
+#    build: .
+    image: hhsh/php
     depends_on:
       - mysql
       - redis
