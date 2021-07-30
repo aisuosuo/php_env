@@ -10,6 +10,7 @@
 2.  自己照着添加一个nginx配置
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/0714/172056_92c861a6_1138266.png "屏幕截图.png")
 
+3. ![参数说明](https://images.gitee.com/uploads/images/2021/0730/112114_a761e6e6_1138266.png "屏幕截图.png")
 #### 参与贡献
 
 1.  Fork 本仓库
