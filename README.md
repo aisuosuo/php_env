@@ -17,10 +17,5 @@
 4. 项目路径"***/php_env/project/***"
 ![输入图片说明](https://images.gitee.com/uploads/images/2021/0730/112230_902073bb_1138266.png "屏幕截图.png")
 
-5. 进入"***/php_env",执行"docker-compose up -d"命令，完成之后，进入自己配的nginx域名，即可进入网页（记得改本地的host）
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+5. 进入"***/php_env",执行"docker-compose up -d"命令，完成之后，进入自己配的nginx的域名，即可进入网页（记得改本地的host）
 
