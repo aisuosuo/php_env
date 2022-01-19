@@ -7,7 +7,7 @@ services:
       - php
     image: nginx
     volumes:
-      - /Users/wilf01/Personal/php/php_env/project:/data/php_env/project
+      - /Users/wilf01/Personal/php/php_env/project:/data/php_env/project # 将本地路径映射到容器内（本地路径:容器路径）
       - /Users/wilf01/Personal/php/php_env/nginx_conf:/etc/nginx/conf.d
     restart: always
     ports:
@@ -17,8 +17,8 @@ services:
 
   php:
     platform: linux/x86_64
-    #    build: .
-    image: hhsh/php-7.1.33
+    #    build: . # 编译本地的Dockerfile
+    image: hhsh/php-7.1.33 # 编译后的镜像名称（如果build被注释了，则会去docker hub上下载这个镜像）
     depends_on:
       - mysql
       - redis
@@ -34,7 +34,7 @@ services:
     image: mysql
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_ROOT_PASSWORD: 123456 # mysql root用户的密码
     ports:
       - 3306:3306
     container_name: mysql
